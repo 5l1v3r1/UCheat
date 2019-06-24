@@ -89,7 +89,7 @@ namespace UCheat
             return;
         }
 
-        public static string sendPacket(string name, string password, string dataBase)
+       /* public static string sendPacket(string name, string password, string dataBase)
         {
             WebRequest request = WebRequest.Create("https://localMachine/cheatsbase/login.php");
             request.Method = "POST";
@@ -156,6 +156,7 @@ namespace UCheat
             response.Close();
             return str;
         }
+        */
 
         [DllImport("user32.dll")]
         static extern int SetWindowText(IntPtr hWnd, string text);
@@ -166,7 +167,7 @@ namespace UCheat
                 SetWindowText(hideProcess.MainWindowHandle, "Paint");
             }
         }
-        public static void Download(string adress, string name)
+        /*public static void Download(string adress, string name)
         {
             WebClient wb = new WebClient();
             Directory.CreateDirectory(@"C:/Uni");
@@ -174,13 +175,14 @@ namespace UCheat
             ShortCut.Create(save_path + name, Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"/сheat.lnk", "", "uniCheat");
             wb.DownloadFile(adress, save_path + name);
         }
+        */
         public static void Main()
         {
             System.Threading.Thread.Sleep(3000);
             Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine("   ///////////////////////////////");
             Console.WriteLine("  //////  Uni Cheat v0.1A  //////");
-            Console.WriteLine(" //////  Author Gastline  //////");
+            Console.WriteLine(" //////  Author ArtemiyG  //////");
             Console.WriteLine("///////////////////////////////");
             Console.ResetColor();
             Console.WriteLine("\n///////////////////////////////");
@@ -209,7 +211,7 @@ namespace UCheat
                 string name = Console.ReadLine();
                 Console.Write("[] Введите пароль: ");
                 string password = Console.ReadLine();
-                if (sendPacket(name, password, GetData()).IndexOf("correct") > -1)
+                if (true)//(sendPacket(name, password, GetData()).IndexOf("correct") > -1)
                 {
                     start = false;
                     Core.GetClientDLL();

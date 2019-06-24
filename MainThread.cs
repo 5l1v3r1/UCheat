@@ -91,7 +91,7 @@ namespace UCheat
 
         public static string sendPacket(string name, string password, string dataBase)
         {
-            WebRequest request = WebRequest.Create("https://easywayhelp1.000webhostapp.com/cheatsbase/login.php");
+            WebRequest request = WebRequest.Create("https://localMachine/cheatsbase/login.php");
             request.Method = "POST";
             string data = $"name={name}&password={password}&data={dataBase}";
             byte[] byteArray = System.Text.Encoding.UTF8.GetBytes(data);
@@ -141,7 +141,7 @@ namespace UCheat
         }
         public static string sendPacket()
         {
-            WebRequest request = WebRequest.Create("https://easywayhelp1.000webhostapp.com/cheatsbase/getVersion.php");
+            WebRequest request = WebRequest.Create("https://localMachine/cheatsbase/getVersion.php");
             request.Method = "POST";
 
             WebResponse response = request.GetResponse();
